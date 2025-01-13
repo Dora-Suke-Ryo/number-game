@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link th:href="@{/css/game.css}" rel="styleSheet">
+
+	<title>数当てゲーム</title>
 </head>
 <body>
-
+	 <h1>数当てゲーム</h1>
+	<div class="contents">
+	 	<p th:text="${message}"></p>
+	 	<form action="/guess" method="post">
+	 		<input type="number" name="guess" placeholder="予想する数字">
+	 		<button type="submit">予想する</button>
+	 	</form>
+	 </div>
 </body>
 </html>
